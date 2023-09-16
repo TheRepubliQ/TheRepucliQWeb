@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Alterar Senha</title>
+
+</head>
+<body>
+    <header>
+        <h1 class="header">The RepubliQ</h1>
+    </header>
+    <div class="container">
+        <h1 class="header">Alterar Senha</h1>
+
+        <h2 class="subtitle">Senha Atual</h2>
+        <input type="password" id="senhaAtual" name="senhaAtual" class="input-field" placeholder="Senha Atual" required>
+        
+        <h3 class="subtitle">Nova Senha</h3>
+        <input type="password" id="novaSenha" name="novaSenha" class="input-field" placeholder="Nova Senha" required>
+        
+        <h4 class="subtitle">Confirmar Senha</h4>
+        <input type="password" id="confirmarSenha" name="confirmarSenha" class="input-field" placeholder="Confirmar Senha" required>
+        <span class="error-message" id="senha-error"></span>
+
+        <br><br>
+        <button id="btn-cad" class="button" onclick="validateAndRedirect()">Alterar senha</button>
+    </div>
+    <footer>
+        Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Araraquara<br>
+        Email para contato: luan.freitas.@aluno.ifsp.br
+    </footer>
+
+    <script>
+        function validateAndRedirect() {
+            var senhaAtual = document.getElementById("senhaAtual").value;
+            var novaSenha = document.getElementById("novaSenha").value;
+            var confirmarSenha = document.getElementById("confirmarSenha").value;
+            var error = document.getElementById("senha-error");
+
+            if (senhaAtual === "" || novaSenha === "" || confirmarSenha === "") {
+                error.textContent = "Por favor, preencha todos os campos.";
+            } else if (novaSenha !== confirmarSenha) {
+                error.textContent = "As senhas são diferentes.";
+            } else {
+                error.textContent = ""; // Limpe a mensagem de erro
+                 window.location.href = 'Login.html';
+            }
+        }
+    </script>
+</body>
+</html>
