@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Alterar Senha</title>
-
 </head>
 <body>
     <header>
@@ -13,14 +12,20 @@
     <div class="container">
         <h1 class="header">Alterar Senha</h1>
 
-        <h2 class="subtitle">Senha Atual</h2>
-        <input type="password" id="senhaAtual" name="senhaAtual" class="input-field" placeholder="Senha Atual" required>
-        
+        <h2 class="subtitle">Email</h2>
+        <input type="text" id="email" name="email" class="input-field" placeholder="Email" required>
+
         <h3 class="subtitle">Nova Senha</h3>
         <input type="password" id="novaSenha" name="novaSenha" class="input-field" placeholder="Nova Senha" required>
-        
+
         <h4 class="subtitle">Confirmar Senha</h4>
         <input type="password" id="confirmarSenha" name="confirmarSenha" class="input-field" placeholder="Confirmar Senha" required>
+        
+        <div class="form-group">
+            <label for="mostrarSenha" class="checkbox-label">Mostrar Senha</label>
+            <input type="checkbox" id="mostrarSenha" class="checkbox" onchange="togglePasswordVisibility()">
+        </div>
+        
         <span class="error-message" id="senha-error"></span>
 
         <br><br>
@@ -33,18 +38,32 @@
 
     <script>
         function validateAndRedirect() {
-            var senhaAtual = document.getElementById("senhaAtual").value;
+            var email = document.getElementById("email").value;
             var novaSenha = document.getElementById("novaSenha").value;
             var confirmarSenha = document.getElementById("confirmarSenha").value;
             var error = document.getElementById("senha-error");
 
-            if (senhaAtual === "" || novaSenha === "" || confirmarSenha === "") {
+            if (email === "" || novaSenha === "" || confirmarSenha === "") {
                 error.textContent = "Por favor, preencha todos os campos.";
             } else if (novaSenha !== confirmarSenha) {
                 error.textContent = "As senhas são diferentes.";
             } else {
                 error.textContent = ""; // Limpe a mensagem de erro
-                 window.location.href = 'Login.html';
+                window.location.href = 'Login.html';
+            }
+        }
+
+        function togglePasswordVisibility() {
+            var novaSenhaField = document.getElementById("novaSenha");
+            var confirmarSenhaField = document.getElementById("confirmarSenha");
+            var mostrarSenhaCheckbox = document.getElementById("mostrarSenha");
+
+            if (mostrarSenhaCheckbox.checked) {
+                novaSenhaField.type = "text"; // Mostra a nova senha
+                confirmarSenhaField.type = "text"; // Mostra a confirmação da senha
+            } else {
+                novaSenhaField.type = "password"; // Oculta a nova senha
+                confirmarSenhaField.type = "password"; // Oculta a confirmação da senha
             }
         }
     </script>

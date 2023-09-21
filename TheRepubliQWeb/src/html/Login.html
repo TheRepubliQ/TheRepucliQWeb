@@ -22,6 +22,10 @@
         <input type="password" id="password" name="password" class="input-field" placeholder="Senha" required>
         <span class="error-message" id="password-error"></span>
         
+        <label for="showPassword" class="checkbox-label">Mostrar Senha</label>
+        <input type="checkbox" id="showPassword" class="checkbox" onclick="togglePasswordVisibility()">
+        <br><br>
+
         <a href="AlterarSenha.html">Esqueceu a senha?</a>
         <br><br>
 
@@ -46,6 +50,16 @@
     </footer>
 
     <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+
         function validateForm() {
             var userField = document.getElementById("user");
             var passwordField = document.getElementById("password");
