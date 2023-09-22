@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="registrar-moradia.component.css">
+    <title>RegistrarMoradia</title>
+</head>
+<body>
+    <div class="container">
+
+        <a href="HomePage.html" class="back-button">&#8592;</a>
+        
+        <h1 class="header">Registrar Moradia</h1>
+
+        <h2 class="subtitle">Descrição</h2>
+        <input type="text" id="descricao" name="descricao" class="input-field" placeholder="Descrição">
+
+        <h3 class="subtitle">Tipo de Moradia</h3>
+        <select id="tipoMoradia" name="tipoMoradia" class="input-field">
+            <option value="casa">Casa</option>
+            <option value="apartamento">Apartamento</option>
+            <option value="condominio">Condomínio</option>
+        </select>
+
+        <h4 class="subtitle">Preço</h4>
+        <input type="text" id="preco" name="preco" class="input-field" placeholder="Preço">
+
+        <h4 class="subtitle">Ofertado <input type="checkbox" id="ofertado" name="ofertado" class="checkbox"></h4>
+
+        <h3 class="subtitle">Endereço</h3>
+        <h4 class="subtitle">CEP</h4>
+        <input type="text" id="cep" name="cep" class="input-field" placeholder="CEP">
+
+        <h4 class="subtitle">Número</h4>
+        <input type="text" id="numero" name="numero" class="input-field" placeholder="Número">
+
+        <span class="error-message" id="form-error"></span>
+
+        <br><br>
+        <button id="btn-cad" class="button" onclick="validateAndRedirect()">Registrar</button>
+    </div>
+    <footer>
+        Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Araraquara<br>
+        Email para contato: luan.freitas.@aluno.ifsp.br
+    </footer>
+
+    <script>
+        function validateAndRedirect() {
+            var descricaoField = document.getElementById("descricao");
+            var tipoMoradiaField = document.getElementById("tipoMoradia");
+            var precoField = document.getElementById("preco");
+            var cepField = document.getElementById("cep");
+            var numeroField = document.getElementById("numero");
+            var formError = document.getElementById("form-error");
+
+            // Verifique se os campos obrigatórios estão vazios
+            if (
+                descricaoField.value === "" ||
+                tipoMoradiaField.value === "" ||
+                precoField.value === "" ||
+                cepField.value === "" ||
+                numeroField.value === ""
+            ) {
+                formError.textContent = "Por favor, preencha todos os campos obrigatórios.";
+                return; // Impede o envio do formulário se houver campos vazios
+            }
+
+            // Verifique se o formato do preço é válido (números positivos)
+            var preco = parseFloat(precoField.value);
+            if (isNaN(preco) || preco <= 0) {
+                formError.textContent = "Digite um preço válido.";
+                return; // Impede o envio do formulário se o preço não for válido
+            }
+
+            // Verifique se o formato do CEP é válido (5 dígitos numéricos)
+            var cepPattern = /^\d{5}-\d{3}$/; // Formato "12345-678"
+                if (!cepPattern.test(cepField.value)) {
+                formError.textContent = "Digite um CEP válido no formato 12345-678.";
+                return; // Impede o envio do formulário se o CEP não for válido
+            }
+
+
+            // Verifique se o formato do número é válido (números inteiros positivos)
+            var numeroPattern = /^\d+$/;
+            if (!numeroPattern.test(numeroField.value)) {
+                formError.textContent = "Digite um número válido (número inteiro positivo).";
+                return; // Impede o envio do formulário se o número não for válido
+            }
+
+            // Se todas as validações passarem, redirecione o usuário para a página correta (substitua pelo URL correto).
+            window.location.href = 'ListarResidencias.html';
+        }
+    </script>
+</body>
+</html>

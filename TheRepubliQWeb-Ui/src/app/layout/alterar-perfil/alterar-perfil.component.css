@@ -1,0 +1,313 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #27f30c; /* Cor de fundo desejada */
+    padding: 20px;
+    margin-bottom: 60px; 
+}
+/* Estilos para os cabeçalhos */
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff7f7;
+    background-color: #333;
+
+}
+
+/* Estilo para o footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position:relative;
+    bottom: 0; /* Cobrir a parte inferior da janela */
+    width: 100%; /* Largura total */
+    
+}
+
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 80px auto; /* Margem superior maior para acomodar a barra */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilizando o link "Cadastrar" */
+a[href="CadastrarUsuario.html"] {
+    text-decoration: none; /* Remover sublinhado do link */
+    color: #007BFF; /* Cor do link */
+    font-weight: bold; /* Deixar o texto em negrito */
+    margin-right: 10px; /* Espaçamento direita para separar dos outros elementos */
+}
+
+/* Estilizando o link "Esqueceu a senha" */
+a[href="AlterarSenha.html"] {
+    text-decoration: none; /* Remover sublinhado do link */
+    color: #DC3545; /* Cor do link */
+    font-weight: bold; /* Deixar o texto em negrito */
+    margin-left: 10px; /* Espaçamento esquerda para separar dos outros elementos */
+}
+
+
+/* Estilos para os subtítulos */
+.subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+    text-align: left;
+}
+
+/* Estilos para campos de entrada */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilos para botões */
+.button {
+    background-color: #333;
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* Estilos para caixas de seleção (checkbox) */
+.checkbox {
+    margin-left: 28px;
+    margin-top: 12px;
+}
+
+/* Estilos para etiquetas de caixas de seleção (checkbox) */
+.checkbox-label {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Estilos específicos para elementos HTML */
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.edit-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+}
+
+.item-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #333;
+    text-align: left;
+}
+
+.item-price {
+    font-size: 20px;
+    color: #333;
+    margin-top: 32px;
+    text-align: left;
+}
+
+.view-button {
+    display: block;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: #555;
+}
+
+/* Estilos para caixas de seleção (checkbox) */
+.checkbox {
+    margin-top: 10px;
+}
+
+/* Estilize o botão com o símbolo de "Mais" */
+.add-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #555;
+}
+
+/*estilização erros*/
+.error-message {
+    color: red;
+}
+
+/* Estilo para o botão de volta */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para o botão de volta ao passar o mouse */
+.back-button:hover {
+    background-color: #333;
+}
+
+/* Estilo para o botão de volta quando clicado */
+.back-button:active {
+    background-color: #3498db;
+}
+
+/* Estilos adicionais para a tabela */
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.item-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.item-image {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+}
+
+.item-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.item-price {
+    font-size: 16px;
+    margin: 0;
+}
+
+.view-button {
+    display: block;
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.view-button:hover {
+    background-color: #2980b9;
+}
+
+.view-button:active {
+    background-color: #1f618d;
+}
+
+     /* Estilos para a barra de ferramentas */
+.toolbar {
+    background-color: #c2bdbd;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fixar a barra no topo da tela */
+    top: 0; /* Cobrir a linha do topo inteira */
+    left: 0;
+    right: 0;
+    z-index: 999; /* Certificar-se de que está acima de outros elementos */
+}
+
+.toolbar-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.toolbar-button {
+    background-color: #3bcc17;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.toolbar-button:hover {
+    background-color: #1f618d;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.search-bar {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+ .search-input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+ }
+
+ header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+
+}

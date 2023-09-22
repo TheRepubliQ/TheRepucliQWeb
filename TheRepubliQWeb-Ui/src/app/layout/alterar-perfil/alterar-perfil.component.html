@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlterPerfil</title>
+    <link rel="stylesheet" type="text/css" href="alterar-perfil.component.css">
+</head>
+<body>
+    <header>
+        <h1 class="header">The RepubliQ</h1>
+    </header>
+    <div class="container">
+        <a href="/home-page" class="back-button">&#8592;</a>
+        <h1 class="header">Alterar Perfil</h1>
+
+        <label for="login">Login</label>
+        <input type="text" id="login" name="login" class="input-field" placeholder="Login">
+
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" name="cpf" class="input-field" placeholder="CPF">
+
+        <label for="tel">Telefone</label>
+        <input type="text" id="tel" name="tel" class="input-field" placeholder="Telefone">
+
+        <label for="dataNascimento">Data de Nascimento</label>
+        <input type="text" id="dataNascimento" name="dataNascimento" class="input-field" placeholder="Data de Nascimento">
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" class="input-field" placeholder="Email">
+
+        <label for="genero">Gênero</label>
+        <select id="genero" name="genero" class="input-field">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+            <option value="Prefiro não dizer">PrefiroNaoDizer</option>
+        </select>
+
+        <h4 class="subtitle">Ofertado<input type="checkbox" id="ofertado" name="ofertado" class="checkbox"></h4>  
+
+        <br><br>
+        <span class="error-message" id="form-error"></span>
+        <br><br>
+        <button id="btn-cad" class="button" onclick="validateAndRedirect()">Alterar</button>
+    </div>
+    <footer>
+        Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Araraquara<br>
+        Email para contato: luan.freitas.@aluno.ifsp.br
+    </footer>
+
+    <script>
+        function validateAndRedirect() {
+            var loginField = document.getElementById("login");
+            var cpfField = document.getElementById("cpf");
+            var telField = document.getElementById("tel");
+            var dataNascimentoField = document.getElementById("dataNascimento");
+            var emailField = document.getElementById("email");
+            var formError = document.getElementById("form-error");
+
+            // Função para verificar o formato de email
+            function isValidEmail(email) {
+                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                return emailPattern.test(email);
+            }
+
+            // Função para verificar o formato de data de nascimento (DD/MM/AAAA)
+            function isValidDateOfBirth(dateOfBirth) {
+                var datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+                return datePattern.test(dateOfBirth);
+            }
+
+            // Função para verificar o formato de CPF
+            function isValidCPF(cpf) {
+                var cpfPattern = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+                return cpfPattern.test(cpf);
+            }
+
+            // Função para verificar o formato de telefone (xx-xxxxx-xxxx)
+            function isValidTelephone(telephone) {
+                var telephonePattern = /^\d{2}-\d{5}-\d{4}$/;
+                return telephonePattern.test(telephone);
+            }
+
+            // Verifique se todos os campos de texto estão preenchidos
+            if (
+                loginField.value === "" ||
+                cpfField.value === "" ||
+                telField.value === "" ||
+                dataNascimentoField.value === "" ||
+                emailField.value === ""
+            ) {
+                formError.textContent = "Por favor, preencha todos os campos de texto.";
+            } else if (!isValidEmail(emailField.value)) {
+                formError.textContent = "Por favor, insira um email válido.";
+            } else if (!isValidDateOfBirth(dataNascimentoField.value)) {
+                formError.textContent = "Por favor, insira uma data de nascimento válida (DD/MM/AAAA).";
+            } else if (!isValidCPF(cpfField.value)) {
+                formError.textContent = "Por favor, insira um CPF válido (xxx.xxx.xxx-xx).";
+            } else if (!isValidTelephone(telField.value)) {
+                formError.textContent = "Por favor, insira um telefone válido (xx-xxxxx-xxxx).";
+            } else {
+                formError.textContent = ""; // Limpe a mensagem de erro
+                // Redireciona o usuário para a página correta (substitua pelo URL correto).
+                window.location.href = 'ListarResidencias.html';
+            }
+        }
+    </script>
+</body>
+</html>

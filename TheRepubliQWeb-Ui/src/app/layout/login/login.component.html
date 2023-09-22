@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="login.component.css">
+</head>
+<body>
+    <header>
+        <h1 class="header">The RepubliQ</h1>
+    </header>
+    <div class="container">
+        <h1 class="header">Título</h1>
+
+        <h2 class="subtitle">Login</h2>
+        <input type="text" id="user" name="user" class="input-field" placeholder="Login" required>
+        <span class="error-message" id="user-error"></span>
+
+        <h3 class="subtitle">Senha</h3>
+        <input type="password" id="password" name="password" class="input-field" placeholder="Senha" required>
+        <span class="error-message" id="password-error"></span>
+        
+        <label for="showPassword" class="checkbox-label">Mostrar Senha</label>
+        <input type="checkbox" id="showPassword" class="checkbox" onclick="togglePasswordVisibility()">
+        <br><br>
+
+        <a href="AlterarSenha.html">Esqueceu a senha?</a>
+        <br><br>
+
+        <label for="rememberMe" class="checkbox-label">Lembre de mim</label>
+        <input type="checkbox" id="rememberMe" name="rememberMe" class="checkbox">
+
+        <br><br>
+
+        <!-- Redirecionamento para a página ListarResidencias.html -->
+        <button id="btn-cad" class="button" onclick="validateForm()">Login</button>
+        <br><br><br>
+        <span class="error-message" id="form-error"></span>
+
+        <br><br>
+        <!-- Redirecionamento para a página AlterarPerfil.html -->
+        <a href="CadastrarUsuario.html">Cadastrar</a>
+
+    </div>
+    <footer>
+        Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, Campus Araraquara<br>
+        Email para contato: luan.freitas.@aluno.ifsp.br
+    </footer>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+
+        function validateForm() {
+            var userField = document.getElementById("user");
+            var passwordField = document.getElementById("password");
+            var formError = document.getElementById("form-error");
+
+            // Verifique se os campos estão vazios
+            if (userField.value === "" || passwordField.value === "") {
+                formError.textContent = "Por favor, preencha todos os campos.";
+            } else {
+                formError.textContent = ""; // Limpe a mensagem de erro
+                // Redireciona o usuário para a página de login (substitua 'login.html' pelo URL correto).
+                window.location.href = 'HomePage.html';
+            }
+        }
+    </script>
+
+</body>
+</html>
