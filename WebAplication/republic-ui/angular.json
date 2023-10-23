@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TheRepubliQWeb-Ui": {
+    "republic-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/the-republi-qweb-ui",
+            "outputPath": "dist/republic-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,9 +25,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -60,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TheRepubliQWeb-Ui:build:production"
+              "browserTarget": "republic-ui:build:production"
             },
             "development": {
-              "browserTarget": "TheRepubliQWeb-Ui:build:development"
+              "browserTarget": "republic-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TheRepubliQWeb-Ui:build"
+            "browserTarget": "republic-ui:build"
           }
         },
         "test": {
@@ -96,6 +101,6 @@
     }
   },
   "cli": {
-    "analytics": "72a2d867-7249-4ba1-99e3-afb25f304df9"
+    "analytics": "7e123a0d-b0c8-4065-b917-f0a0703d41ff"
   }
 }
