@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="p-col-12">
+    <h1>{{ title }} - Lista de Imóveis</h1>
+  </div>
+
+  <div class="p-grid">
+    <div class="p-col-12">
+      <table>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Descrição</th>
+            <th>Tipo</th>
+            <th>Preço</th>
+            <th>Ofertado</th>
+            <th>País</th>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th class="col-actions-header"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-home>
+          <tr>
+            <td>
+              <span class="p-column-title">Descrição</span>
+              {{ home.descr }}
+            </td>
+            <td>
+              <span class="p-column-title">Tipo</span>
+              {{ home.tipo }}
+            </td>
+            <td>
+              <span class="p-column-title">Preço</span>
+              {{ home.preco }}
+            </td>
+            <td>
+              <span class="p-column-title">Ofertado</span>
+              {{ home.ofertado ? 'Sim' : 'Não' }}
+            </td>
+            <td>
+              <span class="p-column-title">País</span>
+              {{ home.pais }}
+            </td>
+            <td>
+              <span class="p-column-title">Estado</span>
+              {{ home.estado }}
+            </td>
+            <td>
+              <span class="p-column-title">Cidade</span>
+              {{ home.cidade }}
+            </td>
+            <td class="col-actions">
+              <a href="" pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" ></a>
+              <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </table>
+    </div>
+    <div class="p-col-12">
+      <p><a pButton label="Novo Imóvel" routerLink="/homes/new"></a></p>
+    </div>
+  </div>
+</div>
