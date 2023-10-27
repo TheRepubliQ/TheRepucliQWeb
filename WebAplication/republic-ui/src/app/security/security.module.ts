@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 export function tokenGetter(): any {
   return localStorage.getItem('token');
@@ -13,6 +16,9 @@ export function tokenGetter(): any {
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    InputTextModule,
+    ButtonModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,

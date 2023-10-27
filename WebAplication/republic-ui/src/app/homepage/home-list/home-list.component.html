@@ -1,11 +1,12 @@
 <div class="container">
+
   <div class="p-col-12">
-    <h1>{{ title }} - Lista de Imóveis</h1>
+    <h1>{{ title }} - Moradias</h1>
   </div>
 
   <div class="p-grid">
     <div class="p-col-12">
-      <table>
+      <p-table [value]="homes" responsiveLayout="stack" [breakpoint]="'768px'">
         <ng-template pTemplate="header">
           <tr>
             <th>Descrição</th>
@@ -18,35 +19,31 @@
             <th class="col-actions-header"></th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-home>
+        <ng-template pTemplate="body" let-activity>
           <tr>
             <td>
               <span class="p-column-title">Descrição</span>
-              {{ home.descr }}
+              {{ homes.descr }}
             </td>
             <td>
               <span class="p-column-title">Tipo</span>
-              {{ home.tipo }}
+              {{ homes.tipo }}
             </td>
             <td>
               <span class="p-column-title">Preço</span>
-              {{ home.preco }}
-            </td>
-            <td>
-              <span class="p-column-title">Ofertado</span>
-              {{ home.ofertado ? 'Sim' : 'Não' }}
+              {{ homes.preco }}
             </td>
             <td>
               <span class="p-column-title">País</span>
-              {{ home.pais }}
+              {{ homes.pais }}
             </td>
             <td>
               <span class="p-column-title">Estado</span>
-              {{ home.estado }}
+              {{ homes.estado }}
             </td>
             <td>
               <span class="p-column-title">Cidade</span>
-              {{ home.cidade }}
+              {{ homes.cidade }}
             </td>
             <td class="col-actions">
               <a href="" pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" ></a>
@@ -54,10 +51,7 @@
             </td>
           </tr>
         </ng-template>
-      </table>
-    </div>
-    <div class="p-col-12">
-      <p><a pButton label="Novo Imóvel" routerLink="/homes/new"></a></p>
+      </p-table>
     </div>
   </div>
 </div>
