@@ -6,7 +6,7 @@
 
   <div class="p-grid">
     <div class="p-col-12">
-      <p-table  >
+      <p-table [value]="homes" responsiveLayout="stack" [breakpoint]="'768px'">
         <ng-template pTemplate="header">
           <tr>
             <th>Descrição</th>
