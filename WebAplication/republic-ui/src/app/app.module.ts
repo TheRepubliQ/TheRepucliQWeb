@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SecurityModule } from './security/security.module';
 import { AuthService } from './security/auth.service';
 import { CoreModule } from './core/core.module';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CoreModule } from './core/core.module';
     HttpClientModule,
     AppRoutingModule,
     SecurityModule,
+    TableModule,
     CoreModule
   ],
   providers: [

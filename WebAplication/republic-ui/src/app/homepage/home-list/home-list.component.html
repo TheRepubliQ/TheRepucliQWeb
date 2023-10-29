@@ -6,7 +6,7 @@
 
   <div class="p-grid">
     <div class="p-col-12">
-      <p-table [value]="homes" responsiveLayout="stack" [breakpoint]="'768px'">
+      <p-table  >
         <ng-template pTemplate="header">
           <tr>
             <th>Descrição</th>
@@ -19,31 +19,31 @@
             <th class="col-actions-header"></th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-activity>
+        <ng-template pTemplate="body" let-home>
           <tr>
             <td>
               <span class="p-column-title">Descrição</span>
-              {{ homes.descr }}
+              {{ home.descr }}
             </td>
             <td>
               <span class="p-column-title">Tipo</span>
-              {{ homes.tipo }}
+              {{ home.tipo }}
             </td>
             <td>
               <span class="p-column-title">Preço</span>
-              {{ homes.preco }}
+              {{ home.preco }}
             </td>
             <td>
               <span class="p-column-title">País</span>
-              {{ homes.pais }}
+              {{ home.pais }}
             </td>
             <td>
               <span class="p-column-title">Estado</span>
-              {{ homes.estado }}
+              {{ home.estado }}
             </td>
             <td>
               <span class="p-column-title">Cidade</span>
-              {{ homes.cidade }}
+              {{ home.cidade }}
             </td>
             <td class="col-actions">
               <a href="" pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" ></a>

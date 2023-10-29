@@ -3,7 +3,6 @@ import { HomeListComponent } from './home-list/home-list.component';
 import { HomeRegisterComponent } from './home-register/home-register.component';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
@@ -12,7 +11,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { SecurityModule } from '../security/security.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { SharedModule } from 'primeng/api/shared';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { SharedModule } from 'primeng/api/shared';
   ],
   imports: [
     BrowserModule,
-
     FormsModule,
     TableModule,
     ButtonModule,
@@ -30,7 +28,6 @@ import { SharedModule } from 'primeng/api/shared';
     InputTextModule,
     CalendarModule,
     DropdownModule,
-    SharedModule,
     SecurityModule,
     RouterModule
 
