@@ -8,8 +8,8 @@ import { HomepageServic } from '../homepage.service';
 })
 
 export class HomeListComponent {
-  title = 'Republic';
   homes = []
+
 
   constructor(
     private homepageService: HomepageServic,

@@ -29,4 +29,8 @@ export class LoginFormComponent {
     })
   }
 
+  cadastrar():void{
+    this.router.navigate(['/registro']);
+  }
+
 }

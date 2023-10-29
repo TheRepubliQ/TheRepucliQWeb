@@ -8,6 +8,7 @@ import { SecurityModule } from './security/security.module';
 import { AuthService } from './security/auth.service';
 import { CoreModule } from './core/core.module';
 import { TableModule } from 'primeng/table';
+import { HomepageModule } from './homepage/homepage.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { TableModule } from 'primeng/table';
     HttpClientModule,
     AppRoutingModule,
     SecurityModule,
-    TableModule,
+    HomepageModule,
     CoreModule
   ],
   providers: [

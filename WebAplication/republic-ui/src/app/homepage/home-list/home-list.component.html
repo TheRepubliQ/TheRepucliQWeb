@@ -1,57 +1,60 @@
-<div class="container">
+<p-dataView [value]="homes" layout="list">
+  <ng-template pTemplate="header">
+    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+  </ng-template>
 
-  <div class="p-col-12">
-    <h1>{{ title }} - Moradias</h1>
-  </div>
+  <ng-template let-home pTemplate="listItem">
 
-  <div class="p-grid">
-    <div class="p-col-12">
-      <p-table [value]="homes" responsiveLayout="stack" [breakpoint]="'768px'">
-        <ng-template pTemplate="header">
-          <tr>
-            <th>Descrição</th>
-            <th>Tipo</th>
-            <th>Preço</th>
-            <th>Ofertado</th>
-            <th>País</th>
-            <th>Estado</th>
-            <th>Cidade</th>
-            <th class="col-actions-header"></th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-home>
-          <tr>
-            <td>
-              <span class="p-column-title">Descrição</span>
-              {{ home.descr }}
-            </td>
-            <td>
-              <span class="p-column-title">Tipo</span>
-              {{ home.tipo }}
-            </td>
-            <td>
-              <span class="p-column-title">Preço</span>
-              {{ home.preco }}
-            </td>
-            <td>
-              <span class="p-column-title">País</span>
-              {{ home.pais }}
-            </td>
-            <td>
-              <span class="p-column-title">Estado</span>
-              {{ home.estado }}
-            </td>
-            <td>
-              <span class="p-column-title">Cidade</span>
-              {{ home.cidade }}
-            </td>
-            <td class="col-actions">
-              <a href="" pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" ></a>
-              <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
-            </td>
-          </tr>
-        </ng-template>
-      </p-table>
+    <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+      <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+        <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
+          src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
+        <div
+          class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+          <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+            <div class="text-2xl font-bold text-900">{{ home.descr }}</div>
+            <div class="flex align-items-center gap-3">
+              <span class="font-semibold">{{ home.tipo }}</span>
+              <br>
+              <span>{{'Local: ' + home.cidade + ", " + home.bairro + ", " + home.rua + " - " + home.estado }}</span>
+            </div>
+          </div>
+          <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+            <span class="text-2xl font-semibold">{{ 'R$' + home.preco }}</span>
+            <button pButton icon="pi pi-shopping-cart"
+              class="md:align-self-end mb-2 p-button-rounded">Visualizar</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
+
+  </ng-template>
+
+  <ng-template let-home pTemplate="gridItem">
+    <div class=" flex-direction: row">
+      <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+        <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
+          src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
+        <div
+          class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+          <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+            <div class="text-2xl font-bold text-900">{{ home.descr }}</div>
+            <div class="flex align-items-center gap-3">
+              <span class="font-semibold">{{ home.tipo }}</span>
+              <br>
+              <span>{{'Local: ' + home.cidade + ", " + home.bairro + ", " + home.rua + " - " + home.estado }}</span>
+            </div>
+          </div>
+          <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+            <span class="text-2xl font-semibold">{{ 'R$' + home.preco }}</span>
+            <button pButton icon="pi pi-shopping-cart"
+              class="md:align-self-end mb-2 p-button-rounded">Visualizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+
+</p-dataView>

@@ -12,6 +12,7 @@ import { SecurityModule } from '../security/security.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { TableModule } from 'primeng/table';
+import { DataViewModule } from 'primeng/dataview';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { TableModule } from 'primeng/table';
     CalendarModule,
     DropdownModule,
     SecurityModule,
-    RouterModule
+    DataViewModule,
+    RouterModule,
+
 
   ],
   exports: [
