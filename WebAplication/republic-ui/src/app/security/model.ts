@@ -1,6 +1,27 @@
 
 export class User{
-  id!: number;
+  name?: string;
+  email?: string;
+  password?: string;
+  telefone?: string;
+  dataNascimento?: string;
+  gender?: string;
+  login?: string;
+  cpf?: string;
+
+
+  static toJson(user : User):any{
+    return{
+      name: user.name,
+      email: user.email,
+      password: user.password,
+      telefone: user.telefone,
+      dataNascimento: user.dataNascimento,
+      gender: user.gender,
+      login: user.login,
+      cpf: user.cpf
+    }
+  }
 }
 
 export class Home {
