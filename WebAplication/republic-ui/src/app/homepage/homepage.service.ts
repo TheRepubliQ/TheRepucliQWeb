@@ -9,6 +9,7 @@ export class HomepageServic {
 
   homeUrl = 'http://localhost:8080/home';
   email: any;
+  private id!: number;
 
   constructor(
     private http: HttpClient,
@@ -22,4 +23,17 @@ export class HomepageServic {
         return response;
       })
   }
+
+  setId( value : number): void{
+    this.id = value;
+  }
+
+  homeView(): Promise<any>{
+    return this.http.get(`${this.homeUrl}/${this.id}`)
+      .toPromise()
+      .then(response => {
+        return response;
+      })
+  }
+
 }

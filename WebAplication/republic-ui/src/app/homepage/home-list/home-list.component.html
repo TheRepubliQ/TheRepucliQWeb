@@ -16,13 +16,14 @@
             <div class="flex align-items-center gap-3">
               <span class="font-semibold">{{ home.tipo }}</span>
               <br>
-              <span>{{'Local: ' + home.cidade + ", " + home.bairro + ", " + home.rua + " - " + home.estado }}</span>
+              <span>{{'Local: ' + home.endereco.cidade + ", " + home.endereco.bairro + ", " +
+                home.endereco.rua + " - " + home.endereco.estado }}</span>
             </div>
           </div>
           <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
             <span class="text-2xl font-semibold">{{ 'R$' + home.preco }}</span>
             <button pButton icon="pi pi-shopping-cart"
-              class="md:align-self-end mb-2 p-button-rounded">Visualizar</button>
+              class="md:align-self-end mb-2 p-button-rounded" (click)="homeView(home.id)">Visualizar</button>
           </div>
         </div>
       </div>

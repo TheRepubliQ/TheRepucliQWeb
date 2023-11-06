@@ -13,12 +13,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { TableModule } from 'primeng/table';
 import { DataViewModule } from 'primeng/dataview';
+import { HomeViewComponent } from './home-view/home-view.component';
 
 
 @NgModule({
   declarations: [
     HomeListComponent,
-    HomeRegisterComponent
+    HomeRegisterComponent,
+    HomeViewComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { DataViewModule } from 'primeng/dataview';
   ],
   exports: [
     HomeListComponent,
-    HomeRegisterComponent
+    HomeRegisterComponent,
+    HomeViewComponent
   ]
 })
 export class HomepageModule { }

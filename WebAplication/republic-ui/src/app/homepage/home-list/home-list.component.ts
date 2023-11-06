@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HomepageServic } from '../homepage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-list',
@@ -10,9 +11,9 @@ import { HomepageServic } from '../homepage.service';
 export class HomeListComponent {
   homes = []
 
-
   constructor(
     private homepageService: HomepageServic,
+    private router: Router
   ){}
 
    ngOnInit(): void {
@@ -24,5 +25,10 @@ export class HomeListComponent {
       .then(result => {
         this.homes = result;
       }).catch(error => console.log(error));
+   }
+
+   homeView(value : number): void {
+    this.homepageService.setId(value);
+    this.router.navigate(['/homeView']);
    }
 }

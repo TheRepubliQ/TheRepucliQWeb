@@ -23,23 +23,23 @@ export class User{
     }
   }
 }
-
 export class Home {
   id!: number;
   descr?: string;
   tipo?: string;
   preco?: number;
   ofertado?: boolean;
-  pais?: string;
-  estado?: string;
-  numero?: string;
-  rua?: string;
-  bairro?: string;
-  cidade?: string;
-  cep?: string;
-  complemento?: string;
+  endereco?: {
+    pais?: string;
+    estado?: string;
+    numero?: string;
+    rua?: string;
+    bairro?: string;
+    cidade?: string;
+    cep?: string;
+    complemento?: string;
+  };
   user: any;
-
 
   constructor(user_id: number){
     this.user = new User();
@@ -53,14 +53,16 @@ export class Home {
       tipo: home.tipo,
       preco: home.preco,
       ofertado: home.ofertado,
-      pais: home.pais,
-      estado: home.estado,
-      numero: home.numero,
-      rua: home.rua,
-      bairro: home.bairro,
-      cidade: home.cidade,
-      cep: home.cep,
-      complemento: home.complemento,
+      endereco: {
+        pais: home.endereco?.pais,
+        estado: home.endereco?.estado,
+        numero: home.endereco?.pais,
+        rua: home.endereco?.rua,
+        bairro: home.endereco?.cidade,
+        cidade: home.endereco?.cidade,
+        cep: home.endereco?.cep,
+        complemento: home.endereco?.complemento,
+      },
       user: home.user
     }
   }
