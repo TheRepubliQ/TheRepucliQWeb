@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HomepageServic } from '../homepage.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-home-view',
@@ -14,7 +14,6 @@ export class HomeViewComponent {
 
   constructor(
     private service: HomepageServic,
-    private router: Router,
     private route: ActivatedRoute,
   ) { }
 
