@@ -1,3 +1,4 @@
+import * as moment from 'moment';
 
 export class User{
   name?: string;
@@ -18,7 +19,7 @@ export class User{
       email: user.email,
       password: user.password,
       telefone: user.telefone,
-      dataNascimento: user.dataNascimento,
+      dataNascimento: moment(user.dataNascimento).format('DD/MM/YYYY'),
       gender: user.gender,
       login: user.login,
       cpf: user.cpf,

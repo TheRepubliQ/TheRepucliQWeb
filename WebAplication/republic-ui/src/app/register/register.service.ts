@@ -18,7 +18,7 @@ export class RegisterService {
     const headers = new HttpHeaders()
       .append('Content-Type', 'application/json');
 
-    return this.http.post<any>(this.homeUrl, user, { headers })
+    return this.http.post<any>(this.homeUrl, User.toJson(user), { headers })
       .toPromise();
   }
 }
