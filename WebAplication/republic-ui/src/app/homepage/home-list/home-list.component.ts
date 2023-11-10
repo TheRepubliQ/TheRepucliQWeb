@@ -1,3 +1,4 @@
+import { Home } from './../../security/model';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { HomepageServic } from '../homepage.service';
 import { Router } from '@angular/router';
@@ -27,8 +28,7 @@ export class HomeListComponent {
       }).catch(error => console.log(error));
    }
 
-   homeView(value : number): void {
-    this.homepageService.setId(value);
-    this.router.navigate(['/homeView']);
+   homeView(home : Home): void {
+    this.router.navigate(['/homeView/', home.id]);
    }
 }

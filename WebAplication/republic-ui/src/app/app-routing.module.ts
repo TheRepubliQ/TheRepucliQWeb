@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'home', component: HomeListComponent  }, // Rota padrão (Home page)
   { path: 'login', component: LoginFormComponent }, // Rota para o formulário de login
   { path: 'registro', component: RegisterFormComponent }, // Rota para o formulário de registro
-  { path: 'homeView', component: HomeViewComponent }, // Rota para o formulário de registro
+  { path: 'homeView/:id', component: HomeViewComponent }, // Rota para o formulário de registro
 ];
 
 @NgModule({

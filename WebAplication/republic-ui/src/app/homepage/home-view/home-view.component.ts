@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HomepageServic } from '../homepage.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-view',
@@ -14,15 +14,17 @@ export class HomeViewComponent {
 
   constructor(
     private service: HomepageServic,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() : void{
-    this.getHomeView();
+    const id = this.route.snapshot.params['id'];
+    this.getHomeView(id);
   }
 
-  getHomeView(): void {
-    this.service.homeView()
+  getHomeView(id : number): void {
+    this.service.homeView(id)
       .then(result => {
         this.home = result;
       }).catch(error => console.log(error))

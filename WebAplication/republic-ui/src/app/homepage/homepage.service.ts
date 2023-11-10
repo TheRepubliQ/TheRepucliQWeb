@@ -28,8 +28,8 @@ export class HomepageServic {
     this.id = value;
   }
 
-  homeView(): Promise<any>{
-    return this.http.get(`${this.homeUrl}/${this.id}`)
+  homeView(id : number): Promise<any>{
+    return this.http.get(`${this.homeUrl}/${id}`)
       .toPromise()
       .then(response => {
         return response;
