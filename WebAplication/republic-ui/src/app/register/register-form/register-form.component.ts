@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { RegisterService } from '../register.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { User } from 'src/app/security/model';
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
@@ -10,29 +10,29 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class RegisterFormComponent {
-  form: FormGroup;
+  user = new User();
+
+  genders = [
+    { label: 'Masculino', value: 'MASCULINO' },
+    { label: 'Feminino', value: 'FEMININO' },
+    { label: 'Outro', value: 'OUTRO' },
+    { label: 'Prefiro não dizer', value: 'PREFIRO_NAO_DIZER' }
+  ];
 
   constructor(
     private formBuilder: FormBuilder,
     private registerService: RegisterService,
     private route: ActivatedRoute,
     private router: Router
-    ) {
-    this.form = this.formBuilder.group( {
-      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
-      telefone: ['', [Validators.required, Validators.pattern('^[0-9]{12}$')]],
-      dataNascimento: ['', [Validators.required]],
-      gender: ['', [Validators.required]],
-      login: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-      Cpf: ['', [Validators.pattern('^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$')]]
-    });
-  }
+    ) {}
 
-  onSubmit(registro : NgForm) {
-
-  }
+    save(userForm: NgForm) {
+      this.registerService.add(this.user)
+        .then(() => {
+          this.router.navigate(['/login']);
+        })
+        .catch(error => error);
+    }
 
 
 }

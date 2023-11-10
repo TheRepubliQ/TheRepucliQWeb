@@ -7,18 +7,18 @@ import { User } from '../security/model';
 })
 export class RegisterService {
 
-  activitiesUrl = 'http://localhost:8080/registrar';
+  homeUrl = 'http://localhost:8080/registrar';
 
 
   constructor(
     private http: HttpClient
   ) { }
 
-  add(register: User): Promise<User> {
+  add(user: User): Promise<User> {
     const headers = new HttpHeaders()
       .append('Content-Type', 'application/json');
 
-    return this.http.post<any>(this.activitiesUrl, User.toJson(register), { headers })
+    return this.http.post<any>(this.homeUrl, user, { headers })
       .toPromise();
   }
 }

@@ -8,6 +8,8 @@ export class User{
   gender?: string;
   login?: string;
   cpf?: string;
+  prop?: boolean;
+
 
 
   static toJson(user : User):any{
@@ -19,7 +21,8 @@ export class User{
       dataNascimento: user.dataNascimento,
       gender: user.gender,
       login: user.login,
-      cpf: user.cpf
+      cpf: user.cpf,
+      prop: user.prop
     }
   }
 }
