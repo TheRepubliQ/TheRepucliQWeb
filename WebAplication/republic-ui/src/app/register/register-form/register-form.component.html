@@ -57,14 +57,23 @@
         <p-dropdown name="gender" [options]="genders" placeholder="Selecione"
         [(ngModel)]="user.gender" #type="ngModel"></p-dropdown>
       </div>
+      <br>
+      <div class="p-col-12 p-md-6 p-fluid">
+        <p-checkbox  [(ngModel)]="user.prop" #type="ngModel" value="0" inputId="1"></p-checkbox>
+        <label for="prop">  Usuário proprietário</label>
+      </div>
+
+
 
       <br>
 
       <div class="p-col-12">
         <p>
-          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+          <button pButton type="submit" label="Registrar" [disabled]="f.invalid"></button>
         </p>
       </div>
+
+
     </div>
 
   </form>

@@ -14,7 +14,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TableModule } from 'primeng/table';
 import { DataViewModule } from 'primeng/dataview';
 import { HomeViewComponent } from './home-view/home-view.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogModule } from 'primeng/dialog';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { HomeViewComponent } from './home-view/home-view.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     TableModule,
     ButtonModule,
@@ -34,7 +37,8 @@ import { HomeViewComponent } from './home-view/home-view.component';
     SecurityModule,
     DataViewModule,
     RouterModule,
-
+    DialogModule,
+    ToastModule
 
   ],
   exports: [
