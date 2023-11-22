@@ -1,1 +1,108 @@
-<p>home-register works!</p>
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="save(f)">
+
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>Cadastro de moradia</h1>
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Titulo</label>
+        <input pInputText name="tiulo" type="text"
+        [(ngModel)]="home.titulo" #titulo="ngModel" required minlength="5" maxlength="150">
+
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Descrição</label>
+        <input pInputText name="telefone" type="text"
+        [(ngModel)]="home.descr" #descr="ngModel" minlength="3" maxlength="250">
+      </div>
+
+      <div class="p-col-12 p-md-6 p-fluid">
+        <label>Gênero</label>
+        <p-dropdown name="gender" [options]="homeType" placeholder="Selecione"
+        [(ngModel)]="home.tipo" #type="ngModel"></p-dropdown>
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Preço:</label>
+        <input pInputText name="preco" type="number"
+        [(ngModel)]="home.preco" #preco="ngModel" required>
+      </div>
+
+      <br>
+
+      <!-- <div class="p-col-12 p-md-9 p-fluid">
+        <label>CEP</label>
+        <input pInputText name="cep" type="number"
+        [(ngModel)]="home.endereco.cep" #cep="ngModel" required>
+
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>País</label>
+        <input pInputText name="pais" type="text"
+        [(ngModel)]="home.endereco.pais" #pais="ngModel" required>
+
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Estado</label>
+        <input pInputText name="Estado" type="text"
+        [(ngModel)]="home.endereco.estado" #estado="ngModel" required>
+
+      </div>
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Cidade</label>
+        <input pInputText name="cidade" type="text"
+        [(ngModel)]="home.endereco.cidade" #cidade="ngModel" required>
+
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Bairro</label>
+        <input pInputText name="bairro" type="text"
+        [(ngModel)]="home.endereco.bairro" #bairro="ngModel" required>
+
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Rua</label>
+        <input pInputText name="Rua" type="text"
+        [(ngModel)]="home.endereco.rua" #rua="ngModel" required>
+
+      </div>
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Numero</label>
+        <input pInputText name="numero" type="number"
+        [(ngModel)]="home.endereco.numero" #numero="ngModel" required>
+
+      </div>
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>complemento</label>
+        <input pInputText name="complemento" type="text"
+        [(ngModel)]="home.endereco.complemento" #complemento="ngModel">
+
+      </div> -->
+
+
+
+      <br>
+
+
+
+
+      <br>
+
+      <div class="p-col-12">
+        <p>
+          <button pButton type="submit" label="Registrar imovél" [disabled]="f.invalid"></button>
+        </p>
+      </div>
+
+
+    </div>
+
+  </form>
+</div>

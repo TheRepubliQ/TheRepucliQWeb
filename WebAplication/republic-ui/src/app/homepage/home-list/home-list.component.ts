@@ -1,7 +1,7 @@
-import { Home } from './../../security/model';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { HomepageServic } from '../homepage.service';
 import { Router } from '@angular/router';
+import { Home } from '../model';
 
 @Component({
   selector: 'app-home-list',

@@ -1,6 +1,7 @@
 import { AuthService } from './../security/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Home } from './model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,14 @@ export class HomepageServic {
       .then(response => {
         return response;
       })
+  }
+
+  add(home: Home) : Promise<Home> {
+    const headers = new HttpHeaders()
+      .append('Content-Type', 'application/json');
+
+    return this.http.post<any>(this.homeUrl, Home.toJson(home), { headers })
+      .toPromise();
   }
 
 }

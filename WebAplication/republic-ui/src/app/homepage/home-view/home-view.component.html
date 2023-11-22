@@ -5,7 +5,7 @@
   src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
 
   <div>
-    <div class="text-2xl font-bold text-1000">{{ home.descr }}</div>
+    <div class="text-2xl font-bold text-1000">{{ home.titulo }}</div>
     <div class= font-semibold> {{ home.tipo }}</div>
     <span>{{'Local: ' + home.endereco.cidade + ", " + home.endereco.bairro + ", " +
       home.endereco.rua + " - " + home.endereco.estado }}</span>
@@ -15,11 +15,11 @@
 
     <div class="text-2xl font-semibold text-900"> Sobre</div>
     <div>
-      Uma casa de esquina que possui 2 quartos, 1 sala, 1 cozinha e um banheiro.
+      {{home.descr}}
     </div>
     <br>
     <div class="text-2xl font-semibold text-900"> Contato</div>
-    <div> {{home.user}}</div>
+    <div> {{"     Telefone: " + home.user.telefone  + "  Email: "  + home.user.email}}</div>
   </div>
 
 

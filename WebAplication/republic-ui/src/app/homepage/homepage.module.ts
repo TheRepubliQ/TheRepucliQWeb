@@ -44,7 +44,7 @@ import { ToastModule } from 'primeng/toast';
   exports: [
     HomeListComponent,
     HomeRegisterComponent,
-    HomeViewComponent
+    HomeViewComponent,
   ]
 })
 export class HomepageModule { }

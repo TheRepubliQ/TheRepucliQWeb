@@ -10,7 +10,6 @@ import { ActivatedRoute} from '@angular/router';
 export class HomeViewComponent {
 
   home: any = {}
-  homes: any = []
 
   constructor(
     private service: HomepageServic,

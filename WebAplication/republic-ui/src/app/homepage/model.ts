@@ -1,35 +1,32 @@
 
-export class User{
-  id!: number;
-}
-
 export class Home {
-  id!: number;
+  id?: number;
+  titulo?: string;
   descr?: string;
   tipo?: string;
   preco?: number;
   ofertado?: boolean;
   endereco?: {
-    pais?: string;
-    estado?: string;
-    numero?: string;
-    rua?: string;
-    bairro?: string;
-    cidade?: string;
-    cep?: string;
-    complemento?: string;
+    pais: string;
+    estado: string;
+    numero: string;
+    rua: string;
+    bairro: string;
+    cidade: string;
+    cep: string;
+    complemento :  string;
   };
-  user: any;
+  user?: {
+    id: number;
+    email: string;
+    telefone: string;
+  };
 
-
-  constructor(user_id: number){
-    this.user = new User();
-    this.user.id = user_id;
-  }
 
   static toJson(home: Home): any {
     return {
       id: home.id,
+      titulo: home.titulo,
       descr: home.descr,
       tipo: home.tipo,
       preco: home.preco,
@@ -44,8 +41,13 @@ export class Home {
         cep: home.endereco?.cep,
         complemento: home.endereco?.complemento,
       },
-      user: home.user
+      user: {
+        id: home.user?.id,
+        email: home.user?.email,
+        telefelone: home.user?.telefone
+      }
     }
   }
+
 }
 
