@@ -1,28 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-custom">
-  <div class="container">
-    <a class="navbar-brand mr-auto pl-1" href="home">REPUBLICQ</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto"> <!-- mx-auto para alinhar ao centro -->
-        <li class="nav-item active">
-          <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contato</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sobre nós</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-2"> <!-- ml-2 para espaçamento à direita -->
-        <li class="nav-item">
-          <a class="nav-link" href="login">Logout</a>
-        </li>
-      </ul>
+<nav class="navbar">
+
+  <div class="container">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <a href="javascript:;" class="navbar-toggle" (click)="displayingMenu = !displayingMenu">
+	      <i class="pi pi-bars"></i></a>
+      </div>
     </div>
   </div>
+
+  <ul class="navbar-menu" [hidden]="!displayingMenu">
+    <li class="navbar-user">{{ auth.jwtPayload?.name }}</li>
+    <li class="navbar-menuitem" routerLinkActive="active"
+      >
+      <a routerLink="/home">Atividades</a>
+    </li>
+    <li class="navbar-menuitem"><a href="#">Estatísticas</a></li>
+    <li class="navbar-menuitem"><a href="javascript:;" (click)="logout()">Logout</a></li>
+  </ul>
+
 </nav>

@@ -7,7 +7,7 @@ import { HomeViewComponent } from './homepage/home-view/home-view.component';
 import { HomeRegisterComponent } from './homepage/home-register/home-register.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeListComponent  },          // Rota padrão (Home page)
+  { path: 'home', component: HomeListComponent  },             // Rota padrão (Home page)
   { path: 'login', component: LoginFormComponent },         // Rota para o formulário de login
   { path: 'registro', component: RegisterFormComponent },   // Rota para o formulário de registro
   { path: 'homeView/:id', component: HomeViewComponent },   // Rota para listar casa selecionada

@@ -20,7 +20,7 @@
       </div>
 
       <div class="p-col-12 p-md-6 p-fluid">
-        <label>Gênero</label>
+        <label>Tipo</label>
         <p-dropdown name="gender" [options]="homeType" placeholder="Selecione"
         [(ngModel)]="home.tipo" #type="ngModel"></p-dropdown>
       </div>
@@ -28,12 +28,12 @@
       <div class="p-col-12 p-md-9 p-fluid">
         <label>Preço:</label>
         <input pInputText name="preco" type="number"
-        [(ngModel)]="home.preco" #preco="ngModel" required>
+        [(ngModel)]="home.preco" #preco="ngModel" required min="0">
       </div>
 
       <br>
 
-      <!-- <div class="p-col-12 p-md-9 p-fluid">
+      <div class="p-col-12 p-md-9 p-fluid">
         <label>CEP</label>
         <input pInputText name="cep" type="number"
         [(ngModel)]="home.endereco.cep" #cep="ngModel" required>
@@ -84,8 +84,7 @@
         <input pInputText name="complemento" type="text"
         [(ngModel)]="home.endereco.complemento" #complemento="ngModel">
 
-      </div> -->
-
+      </div>
 
 
       <br>

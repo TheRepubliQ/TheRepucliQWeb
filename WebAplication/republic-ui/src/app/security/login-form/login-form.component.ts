@@ -33,4 +33,5 @@ export class LoginFormComponent {
     this.router.navigate(['/registro']);
   }
 
+
 }

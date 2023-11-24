@@ -1,4 +1,16 @@
 
+export class Address {
+  pais?: string;
+  estado?: string;
+  numero?: string;
+  rua?: string;
+  bairro?: string;
+  cidade?: string;
+  cep?: string;
+  complemento?: string;
+}
+
+
 export class Home {
   id?: number;
   titulo?: string;
@@ -6,16 +18,7 @@ export class Home {
   tipo?: string;
   preco?: number;
   ofertado?: boolean;
-  endereco?: {
-    pais: string;
-    estado: string;
-    numero: string;
-    rua: string;
-    bairro: string;
-    cidade: string;
-    cep: string;
-    complemento :  string;
-  };
+  endereco = new Address();
   user?: {
     id: number;
     email: string;
