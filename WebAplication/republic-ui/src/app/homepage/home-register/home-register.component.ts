@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RegisterService } from 'src/app/register/register.service';
-import { Home } from '../model';
+import { Home, HomeRegister } from '../model';
 import { HomepageServic } from '../homepage.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { HomepageServic } from '../homepage.service';
   styleUrls: ['./home-register.component.css']
 })
 export class HomeRegisterComponent {
-  home = new Home();
+  home = new HomeRegister();
 
   homeType = [
     { label: 'Republica',   value: 'REPUBLICA' },

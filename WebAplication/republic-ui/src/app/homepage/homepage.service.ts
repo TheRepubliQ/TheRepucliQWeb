@@ -1,7 +1,7 @@
 import { AuthService } from './../security/auth.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Home } from './model';
+import { Home, HomeRegister } from './model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ import { Home } from './model';
 export class HomepageServic {
 
   homeUrl = 'http://localhost:8080/home';
+  homeRegister = 'http://localhost:8080/homeEdit';
   email: any;
 
   constructor(
@@ -24,8 +25,6 @@ export class HomepageServic {
       })
   }
 
-
-
   homeView(id : number): Promise<any>{
     return this.http.get(`${this.homeUrl}/${id}`)
       .toPromise()
@@ -34,11 +33,13 @@ export class HomepageServic {
       })
   }
 
-  add(home: Home) : Promise<Home> {
+  add(home: HomeRegister) : Promise<HomeRegister> {
+
+    home.user = this.auth.jwtPayload?.user_id;
     const headers = new HttpHeaders()
       .append('Content-Type', 'application/json');
 
-    return this.http.post<any>(this.homeUrl, Home.toJson(home), { headers })
+    return this.http.post<any>(this.homeRegister, HomeRegister.toJson(home), { headers })
       .toPromise();
   }
 

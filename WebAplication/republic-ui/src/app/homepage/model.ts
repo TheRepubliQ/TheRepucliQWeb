@@ -54,3 +54,38 @@ export class Home {
 
 }
 
+export class HomeRegister {
+  id?: number;
+  titulo?: string;
+  descr?: string;
+  tipo?: string;
+  preco?: number;
+  ofertado?: boolean;
+  endereco = new Address();
+  user?: number;
+
+
+  static toJson(home: HomeRegister): any {
+    return {
+      id: home.id,
+      titulo: home.titulo,
+      descr: home.descr,
+      tipo: home.tipo,
+      preco: home.preco,
+      ofertado: true,
+      endereco: {
+        pais: home.endereco?.pais,
+        estado: home.endereco?.estado,
+        numero: home.endereco?.pais,
+        rua: home.endereco?.rua,
+        bairro: home.endereco?.cidade,
+        cidade: home.endereco?.cidade,
+        cep: home.endereco?.cep,
+        complemento: home.endereco?.complemento,
+      },
+      user: home.user
+    }
+  }
+
+}
+
