@@ -43,4 +43,13 @@ export class HomepageServic {
       .toPromise();
   }
 
+  update(home: HomeRegister, id: number) : Promise<Home>{
+    home.user = this.auth.jwtPayload?.user_id;
+    const headers = new HttpHeaders()
+      .append('Content-Type', 'application/json');
+
+    return this.http.put<any>(`${this.homeRegister}/${id}`, HomeRegister.toJson(home), { headers })
+      .toPromise();
+  }
+
 }

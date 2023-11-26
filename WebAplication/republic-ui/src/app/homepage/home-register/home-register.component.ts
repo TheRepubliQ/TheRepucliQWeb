@@ -22,9 +22,7 @@ export class HomeRegisterComponent {
   ];
 
   constructor(
-    private formBuilder: FormBuilder,
     private registerService: HomepageServic,
-    private route: ActivatedRoute,
     private router: Router
     ) {}
 

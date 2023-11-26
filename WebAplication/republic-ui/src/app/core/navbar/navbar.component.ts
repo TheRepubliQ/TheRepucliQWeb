@@ -16,6 +16,12 @@ export class NavbarComponent {
     private router: Router
   ) { }
 
+
+
+  isLoged(): boolean {
+    return this.auth.jwtPayload?.user_id;
+  }
+
   logout(): void {
     this.auth.logout()
       .then(() => {

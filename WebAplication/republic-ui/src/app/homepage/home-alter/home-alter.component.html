@@ -3,7 +3,7 @@
 
     <div class="p-grid">
       <div class="p-col-12">
-        <h1>Cadastro de moradia</h1>
+        <h1>Atualização de dados da moradia</h1>
       </div>
 
       <div class="p-col-12 p-md-9 p-fluid">
@@ -15,7 +15,7 @@
 
       <div class="p-col-12 p-md-9 p-fluid">
         <label>Descrição</label>
-        <input pInputText name="telefone" type="text"
+        <input pInputText name="telefone" type="text" [value]="home.descr"
         [(ngModel)]="home.descr" #descr="ngModel" minlength="3" maxlength="250">
       </div>
 
@@ -95,7 +95,6 @@
       <div class="p-col-12">
         <p>
           <button pButton type="submit" label="Registrar imovél" [disabled]="f.invalid"></button>
-          <button pButton type="submit" label="Cancelar" href="home"></button>
         </p>
       </div>
 

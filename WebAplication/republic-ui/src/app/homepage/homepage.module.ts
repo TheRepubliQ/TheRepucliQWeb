@@ -17,12 +17,14 @@ import { HomeViewComponent } from './home-view/home-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogModule } from 'primeng/dialog';
 import { ToastModule } from 'primeng/toast';
+import { HomeAlterComponent } from './home-alter/home-alter.component';
 
 @NgModule({
   declarations: [
     HomeListComponent,
     HomeRegisterComponent,
-    HomeViewComponent
+    HomeViewComponent,
+    HomeAlterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { ToastModule } from 'primeng/toast';
     HomeListComponent,
     HomeRegisterComponent,
     HomeViewComponent,
+    HomeAlterComponent
   ]
 })
 export class HomepageModule { }
