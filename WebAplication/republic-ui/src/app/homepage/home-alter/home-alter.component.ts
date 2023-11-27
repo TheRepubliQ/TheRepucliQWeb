@@ -40,7 +40,7 @@ export class HomeAlterComponent {
       }).catch(error => console.log(error))
   }
 
-  save(homeRegister: NgForm){
+  save(){
     // Chama metódo para pegar dados do usuário de acordo com o id;
     this.registerService.update(this.home, this.route.snapshot.params['id'])
       .then(() => {

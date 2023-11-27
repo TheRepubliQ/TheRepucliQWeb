@@ -1,0 +1,79 @@
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="save()">
+
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>Informações da conta</h1>
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Nome</label>
+        <input pInputText name="name" type="text"
+        [(ngModel)]="user.name" #name="ngModel" required minlength="3" maxlength="50">
+
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>E-mail</label>
+        <input pInputText name="email" type="email"
+        [(ngModel)]="user.email" #email="ngModel" required>
+
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Telefone</label>
+        <input pInputText name="telefone" type="text"
+        [(ngModel)]="user.telefone" #telefone="ngModel" minlength="3" maxlength="50">
+      </div>
+
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Login</label>
+        <input pInputText name="login" type="text"
+        [(ngModel)]="user.login" #login="ngModel" required>
+
+      </div>
+
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Senha</label>
+        <input pInputText name="password" type="password"
+        [(ngModel)]="user.password" #password="ngModel" required minlength="6" maxlength="8">
+
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>CPF</label>
+        <input pInputText name="cpf" type="text"
+        [(ngModel)]="user.cpf" #cpf="ngModel" required min="11" maxlength="11">
+      </div>
+
+      <div class="p-col-12 p-md-9 p-fluid">
+        <label>Data de nascimento</label>
+        <input pInputText name="DataNascimento" type="date"
+        [(ngModel)]="user.dataNascimento" #dataNascimento="ngModel" >
+      </div>
+
+      <div class="p-col-12 p-md-6 p-fluid">
+        <label>Gênero</label>
+        <p-dropdown name="gender" [options]="genders" placeholder="Selecione"
+        [(ngModel)]="user.gender" #type="ngModel"></p-dropdown>
+      </div>
+      <br>
+      <div class="p-col-12 p-md-6 p-fluid">
+        <p-checkbox  [(ngModel)]="user.prop" #type="ngModel" value="0" inputId="1"></p-checkbox>
+        <label for="prop">  Usuário proprietário</label>
+      </div>
+      <br>
+
+      <div class="p-col-12">
+        <p>
+          <button pButton type="submit" label="Registrar" [disabled]="f.invalid"></button>
+        </p>
+      </div>
+
+
+    </div>
+
+  </form>
+</div>

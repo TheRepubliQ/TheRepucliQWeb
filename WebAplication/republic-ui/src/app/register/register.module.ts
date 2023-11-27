@@ -10,13 +10,15 @@ import { RouterModule } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckboxModule } from 'primeng/checkbox';
+import { AlterFormComponent } from './alter-form/alter-form.component';
 
 
 
 
 @NgModule({
   declarations: [
-    RegisterFormComponent
+    RegisterFormComponent,
+    AlterFormComponent
   ],
   imports: [
     CommonModule,
