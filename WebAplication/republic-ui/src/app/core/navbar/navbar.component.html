@@ -23,7 +23,7 @@
 
       <ul class="navbar-nav ml-2"> <!-- ml-2 para espaçamento à direita -->
 
-        <div *ngIf="!isLoged()">
+        <div *ngIf="!isLoged">
           <li class="nav-item ">
             <a class="nav-link" href="login" >Login</a>
           </li>
@@ -32,7 +32,7 @@
           </li>
         </div>
 
-        <div *ngIf="isLoged()">
+        <div *ngIf="isLoged">
           <li class="nav-item" ><a class="nav-link" href="javascript:;" (click)="logout()">Logout</a></li>
         </div>
 

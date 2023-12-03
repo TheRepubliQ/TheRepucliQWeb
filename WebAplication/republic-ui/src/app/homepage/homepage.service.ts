@@ -1,14 +1,22 @@
 import { AuthService } from './../security/auth.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Home, HomeRegister } from './model';
+
+export interface HomeFilter {
+  user?: any,
+  type?: string,
+  address?: any,
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class HomepageServic {
 
   homeUrl = 'http://localhost:8080/home';
+  homeFilterUrl = 'http://localhost:8080/home/filter';
   homeRegister = 'http://localhost:8080/homeEdit';
   email: any;
 
@@ -23,6 +31,30 @@ export class HomepageServic {
       .then(response => {
         return response;
       })
+  }
+
+  search(filter: HomeFilter): Promise<any> {
+
+    let params = new HttpParams();
+
+    if(filter.user){
+      params = params.set('user', filter.user);
+    }
+
+    if (filter.type) {
+      params = params.set('type', filter.type);
+    }
+
+    if (filter.address) {
+      params = params.set('address', filter.address);
+    }
+
+
+    return this.http.get(`${this.homeFilterUrl}?resumo`, {  params })
+    .toPromise()
+    .then(response => {
+      return response;
+    });
   }
 
   homeView(id : number): Promise<any>{

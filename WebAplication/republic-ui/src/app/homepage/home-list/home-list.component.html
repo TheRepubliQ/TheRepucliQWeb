@@ -1,4 +1,35 @@
+
+<form autocomplete="off" (ngSubmit)="search()" class="bg-light p-4 mt-4">
+  <div class="p-grid">
+
+    <div class="p-col-12">
+      <h1>Filtro</h1>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="d-flex justify-content-start">
+        <label>Tipo </label>
+        <p-dropdown name="type" [options]="types" placeholder="Selecione" [(ngModel)]="type"></p-dropdown>
+      </div>
+      <div class="d-flex justify-content-start">
+        <label>Localização </label>
+        <input pInputText name="address" type="address"
+        [(ngModel)]="address">
+      </div>
+    </div>
+
+    <div class="col-12 mt-3">
+      <div class="d-flex justify-content-start">
+        <button class="btn btn-primary me-2" type="submit">Pesquisar</button>
+        <button class="btn btn-primary" type="limpar" (click)="limpar()">Limpar</button>
+      </div>
+    </div>
+    <br>
+  </div>
+</form>
+
 <p-dataView [value]="homes" layout="list">
+
   <ng-template pTemplate="header">
     <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
   </ng-template>

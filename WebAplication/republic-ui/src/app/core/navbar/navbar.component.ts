@@ -10,15 +10,18 @@ import { AuthService } from 'src/app/security/auth.service';
 export class NavbarComponent {
 
   displayingMenu = true;
+  isLoged = false;
 
   constructor(
     public auth: AuthService,
     private router: Router
   ) { }
 
+    ngOnInit(){
+      this.isLoged = this.isLog();
+    }
 
-
-  isLoged(): boolean {
+  isLog(): boolean {
     return this.auth.jwtPayload?.user_id;
   }
 
