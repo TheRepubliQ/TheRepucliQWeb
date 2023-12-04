@@ -19,6 +19,8 @@ import { DialogModule } from 'primeng/dialog';
 import { ToastModule } from 'primeng/toast';
 import { HomeAlterComponent } from './home-alter/home-alter.component';
 import { HomeOwnerComponent } from './home-owner/home-owner.component';
+import { SobrenosComponent } from './sobrenos/sobrenos.component';
+import { ContatoComponent } from './contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HomeOwnerComponent } from './home-owner/home-owner.component';
     HomeRegisterComponent,
     HomeViewComponent,
     HomeAlterComponent,
-    HomeOwnerComponent
+    HomeOwnerComponent,
+    SobrenosComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { HomeOwnerComponent } from './home-owner/home-owner.component';
     DataViewModule,
     RouterModule,
     DialogModule,
-    ToastModule
+    ToastModule,
+
 
   ],
   exports: [
@@ -50,7 +55,9 @@ import { HomeOwnerComponent } from './home-owner/home-owner.component';
     HomeRegisterComponent,
     HomeViewComponent,
     HomeAlterComponent,
-    HomeOwnerComponent
+    HomeOwnerComponent,
+    SobrenosComponent,
+    ContatoComponent
   ]
 })
 export class HomepageModule { }

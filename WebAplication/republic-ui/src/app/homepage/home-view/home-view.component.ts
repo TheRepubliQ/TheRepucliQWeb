@@ -13,7 +13,7 @@ import { Interest } from 'src/app/interest/modelInterest';
 export class HomeViewComponent {
 
   home: any = {}
-  prop?: number;
+  prop!: number;
   interested!: number;
   isLoged?: boolean;
 
@@ -26,11 +26,16 @@ export class HomeViewComponent {
 
   ngOnInit() : void{
     const id = this.route.snapshot.params['id'];
-    this.isLoged = this.isLog()
     this.getHomeView(id);
+    this.isLoged = this.isLog()
   }
 
   isLog(): boolean {
+
+    if(this.prop === this.auth.jwtPayload?.user_id){
+      return false;
+    }
+
     return this.auth.jwtPayload?.user_id;
   }
 

@@ -1,90 +1,87 @@
-
-<form autocomplete="off" (ngSubmit)="search()" class="bg-light p-4 mt-4">
-  <div class="p-grid">
-
-    <div class="p-col-12">
-      <h1>Filtro</h1>
-    </div>
-
-    <div class="col-12 col-md-6">
-      <div class="d-flex justify-content-start">
-        <label>Tipo </label>
-        <p-dropdown name="type" [options]="types" placeholder="Selecione" [(ngModel)]="type"></p-dropdown>
+<div class="d-flex justify-content-center">
+  <form autocomplete="off" (ngSubmit)="search()" class="bg-light p-4">
+    <div class="row g-3">
+      <div class="col-12">
+        <h3 class="text-center">Filtro</h3>
       </div>
-      <br>
-      <div class="d-flex justify-content-start">
-        <label>Localização </label>
-        <input pInputText name="address" type="address"
-        [(ngModel)]="address">
+
+      <div class="col-12 mt-3">
+        <div class="d-flex justify-content-center">
+          <label class="col-form-label me-2">Localização</label>
+          <input pInputText name="address" type="address" [(ngModel)]="address">
+          <div class="ms-2"></div> <!-- Espaçamento -->
+          <label class="col-form-label me-2">Tipo</label>
+          <p-dropdown name="type" [options]="types" placeholder="Selecione" [(ngModel)]="type"></p-dropdown>
+        </div>
+        <br>
       </div>
-    </div>
 
-    <div class="col-12 mt-3">
-      <div class="d-flex justify-content-start">
-        <button class="btn btn-primary me-2" type="submit">Pesquisar</button>
-        <button class="btn btn-primary" type="limpar" (click)="limpar()">Limpar</button>
-      </div>
-    </div>
-    <br>
-  </div>
-</form>
 
-<p-dataView [value]="homes" layout="list">
-
-  <ng-template pTemplate="header">
-    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-  </ng-template>
-
-  <ng-template let-home pTemplate="listItem">
-    <div class="col-12">
-    <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
-        <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
-          src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
-        <div
-          class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
-          <div class="flex flex-column align-items-center sm:align-items-start gap-3">
-            <div class="text-2xl font-bold text-900">{{ home.titulo }}</div>
-            <div class="flex align-items-center gap-3">
-              <span class="font-semibold">{{ home.tipo }}</span>
-              <br>
-              <span>{{'Local: ' + home.endereco.cidade + ", " + home.endereco.bairro + ", " +
-                home.endereco.rua + " - " + home.endereco.estado }}</span>
-            </div>
-          </div>
-          <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-            <span class="text-2xl font-semibold">{{ 'R$' + home.preco }}</span>
-
-            <a href="" pButton icon="pi pi-shopping-cart" pTooltip="Visualizar" tooltipPosition="top" [routerLink]="['/homeView', home.id]">Visualizar</a>
-          </div>
+      <div class="col-12 mt-3">
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary me-2" type="submit">Pesquisar</button>
+          <button class="btn btn-primary" type="limpar" (click)="limpar()">Limpar</button>
         </div>
       </div>
     </div>
-  </ng-template>
+  </form>
+</div>
 
-  <ng-template let-home pTemplate="gridItem">
-    <div class=" flex-direction: row">
+
+
+  <p-dataView [value]="homes" layout="list">
+
+    <ng-template pTemplate="header">
+      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+    </ng-template>
+
+    <ng-template let-home pTemplate="listItem">
+      <div class="col-12">
       <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
-        <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
-          src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
-        <div
-          class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
-          <div class="flex flex-column align-items-center sm:align-items-start gap-3">
-            <div class="text-2xl font-bold text-900">{{ home.descr }}</div>
-            <div class="flex align-items-center gap-3">
-              <span class="font-semibold">{{ home.tipo }}</span>
-              <br>
-              <span>{{'Local: ' + home.cidade + ", " + home.bairro + ", " + home.rua + " - " + home.estado }}</span>
+          <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
+            src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
+          <div
+            class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+            <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+              <div class="text-2xl font-bold text-900">{{ home.titulo }}</div>
+              <div class="flex align-items-center gap-3">
+                <span class="font-semibold">{{ home.tipo }}</span>
+                <br>
+                <span>{{'Local: ' + home.endereco.cidade + ", " + home.endereco.bairro + ", " +
+                  home.endereco.rua + " - " + home.endereco.estado }}</span>
+              </div>
             </div>
-          </div>
-          <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-            <span class="text-2xl font-semibold">{{ 'R$' + home.preco }}</span>
-            <button pButton icon="pi pi-shopping-cart"
-              class="md:align-self-end mb-2 p-button-rounded">Visualizar</button>
+            <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+              <span class="text-2xl font-semibold">{{ 'R$' + home.preco }}</span>
+              <button pButton icon="pi pi-shopping-cart" class="md:align-self-end mb-2 p-button-rounded" [routerLink]="['/homeView', home.id]">Visualizar</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </ng-template>
+    </ng-template>
+
+    <ng-template let-home pTemplate="gridItem">
+      <div class="card p-4 mb-4 w-100">
+        <div class="d-flex justify-content-center align-items-center">
+          <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
+            src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
+        </div>
+        <div class="d-flex flex-column align-items-center mt-3">
+          <div class="text-2xl font-bold text-900">{{ home.titulo }}</div>
+          <div class="d-flex flex-column align-items-center gap-3">
+            <span class="font-semibold">{{ home.tipo }}</span>
+            <span>{{'Local: ' + home.endereco.cidade + ", " + home.endereco.bairro + ", " + home.endereco.rua + " - " + home.endereco.estado }}</span>
+          </div>
+          <div class="d-flex flex-column align-items-center gap-3">
+            <span class="text-2xl font-semibold">{{ 'R$' + home.preco }}</span>
+            <button pButton icon="pi pi-shopping-cart" class="md:align-self-end mb-2 p-button-rounded" [routerLink]="['/homeView', home.id]">Visualizar</button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
 
 
-</p-dataView>
+  </p-dataView>
+
+
+

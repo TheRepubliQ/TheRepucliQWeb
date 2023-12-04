@@ -14,27 +14,38 @@
           <a class="nav-link" href="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contato</a>
+          <a class="nav-link" href="contato">Contato</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sobre nós</a>
+          <a class="nav-link" href="sobreNos">Sobre nós</a>
         </li>
       </ul>
 
       <ul class="navbar-nav ml-2"> <!-- ml-2 para espaçamento à direita -->
 
         <div *ngIf="!isLoged">
-          <li class="nav-item ">
-            <a class="nav-link" href="login" >Login</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="registro" >Registra-se</a>
-          </li>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" >
+              <a class="nav-link" href="login" >Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registro" >Registra-se</a>
+            </li>
+          </ul>
         </div>
 
         <div *ngIf="isLoged">
-          <li class="nav-item" ><a class="nav-link" href="javascript:;" (click)="logout()">Logout</a></li>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" >
+              <p-menubar [model]="items"></p-menubar>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;" (click)="logout()">Logout</a>
+            </li>
+          </ul>
         </div>
+
+
 
       </ul>
     </div>

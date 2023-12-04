@@ -1,40 +1,34 @@
+<div class="d-flex justify-content-center align-items-center flex-column">
+  <h1 class="text-center">{{ home.titulo }}</h1>
 
-<div>
-
-  <img class=""
-  src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
-
-  <div>
-    <div class="text-2xl font-bold text-1000">{{ home.titulo }}</div>
-    <div class= font-semibold> {{ home.tipo }}
-      <div class="p-col-12" *ngIf="isLoged && !interested" >
-        <p>
-          <button pButton type="submit" label="Tenho interesse" (click)="interest()"></button>
-        </p>
+  <div class="card p-4 mb-4 w-75">
+    <div class="d-flex justify-content-center">
+      <img class="w-100 mb-4"
+        src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
+    </div>
+    <div *ngIf="isLoged">
+      <div class="p-col-12" *ngIf="isLoged && !interested">
+        <button pButton type="submit" label="Tenho interesse" style="background-color: #2e86de; color: white;"
+          (click)="interest()"></button>
       </div>
-      <div class="p-col-12" *ngIf="interested" >
-        <p>
-          <button pButton type="submit" label="Tirar interesse" (click)="interestRemove()"></button>
-        </p>
+      <div class="p-col-12" *ngIf="interested">
+        <button pButton type="submit" label="Tirar interesse" style="background-color: #dc3545; color: white;"
+          (click)="interestRemove()"></button>
       </div>
     </div>
-    <span *ngIf="home.endereco">
-      {{'Local: ' + (home.endereco?.cidade || '') + ", " + (home.endereco?.bairro || '') + ", " +
-        (home.endereco?.rua || '') + " - " + (home.endereco?.estado || '') }}
-    </span>
-    <br>
-    <span class="text-2xl font-semibold">{{ 'R$ ' + home.preco }}</span>
 
-    <div class="text-2xl font-semibold text-900"> Sobre</div>
+    <div class="text-4xl font-semibold text-900">Sobre</div>
+    <div>{{ home.descr }}</div>
+    <br>
+
+    <div class="text-4xl font-semibold text-900">Contato</div>
     <div>
-      {{home.descr}}
+      <p>"Telefone: " <a class="nav-link text-primary" [href]="'https://wa.me/' + home.user.telefone +'?text=' + '%0AOl%C3%A1%2C%20tudo%20bem%3F%0AVi%20seu%20an%C3%BAncio%20no%20site%20RepublicQ.%0AEstou%20interessado%20na%20sua%20moradia!%0AVamos%20conversar%3F%0A(link%20da%20moradia)'">
+        {{ home.user.telefone }}
+      </a></p>
+      <p>{{"Email: " + home.user?.email}} </p>
     </div>
-    <br>
-    <div class="text-2xl font-semibold text-900"> Contato</div>
-    <div> {{"     Telefone: " + home.user?.telefone  + "  Email: "  + home.user?.email}}</div>
+
+
   </div>
-
-
-
 </div>
-

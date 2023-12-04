@@ -10,6 +10,9 @@ import { InterestComponent } from './interest/interest/interest.component';
 import { InterestOwnerComponent } from './interest/interest-owner/interest-owner.component';
 import { HomeOwnerComponent } from './homepage/home-owner/home-owner.component';
 import { InterestContactsComponent } from './interest/interest-contacts/interest-contacts.component';
+import { AlterFormComponent } from './register/alter-form/alter-form.component';
+import { SobrenosComponent } from './homepage/sobrenos/sobrenos.component';
+import { ContatoComponent } from './homepage/contato/contato.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeListComponent  },                     // Rota padrão (Home page)
@@ -22,6 +25,9 @@ const routes: Routes = [
   { path: 'interest', component: InterestComponent},                   // Rota para listar os interesses
   { path: 'interestOwner', component: InterestOwnerComponent},         // Rota para listar casas com interesses
   { path: 'interestList/:id', component: InterestContactsComponent},   // Rota para listar pessoas interessadas na casa
+  { path: 'alterarDados', component: AlterFormComponent},              // Rota para listar pessoas interessadas na casa
+  { path: 'sobreNos', component: SobrenosComponent},               // Rota para informação sobre os desenvolvedores
+  { path: 'contato', component: ContatoComponent},                // Rota para contato com os desenvolvedores
 ];
 
 

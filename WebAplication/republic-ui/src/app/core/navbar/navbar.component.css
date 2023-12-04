@@ -1,0 +1,16 @@
+/* Estilos para a barra de navegação */
+.navbar-custom {
+  background-color: #fff; /* Cor de fundo */
+  border-bottom: 1px solid #eee; /* Borda inferior */
+}
+
+/* Estilos para os itens do menu */
+.navbar-nav .nav-link {
+  color: #333; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+}
+
+/* Estilos para o logout */
+.navbar-nav.ml-auto .nav-link {
+  color: #7c7878; /* Cor vermelha */
+}

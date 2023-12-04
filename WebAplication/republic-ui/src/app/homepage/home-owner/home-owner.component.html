@@ -4,6 +4,13 @@
   <h1>MINHAS MORADIAS</h1>
 </div>
 
+<div class="d-flex justify-content-end pr-4">
+  <button pButton icon="pi pi-shopping-cart" class="p-button p-button-lg" pTooltip="Visualizar" tooltipPosition="top"
+    [routerLink]="['/homeRegister']">Cadastrar</button>
+</div>
+
+
+
 <p-dataView [value]="homes" layout="list" >
 
   <ng-template let-home pTemplate="listItem">

@@ -33,7 +33,8 @@ import { AlterFormComponent } from './alter-form/alter-form.component';
     CheckboxModule
   ],
   exports: [
-    RegisterFormComponent
+    RegisterFormComponent,
+    AlterFormComponent
   ]
 })
 export class RegisterModule { }
