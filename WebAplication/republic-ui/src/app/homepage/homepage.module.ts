@@ -18,13 +18,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogModule } from 'primeng/dialog';
 import { ToastModule } from 'primeng/toast';
 import { HomeAlterComponent } from './home-alter/home-alter.component';
+import { HomeOwnerComponent } from './home-owner/home-owner.component';
 
 @NgModule({
   declarations: [
     HomeListComponent,
     HomeRegisterComponent,
     HomeViewComponent,
-    HomeAlterComponent
+    HomeAlterComponent,
+    HomeOwnerComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { HomeAlterComponent } from './home-alter/home-alter.component';
     HomeListComponent,
     HomeRegisterComponent,
     HomeViewComponent,
-    HomeAlterComponent
+    HomeAlterComponent,
+    HomeOwnerComponent
   ]
 })
 export class HomepageModule { }

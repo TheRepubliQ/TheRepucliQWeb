@@ -1,0 +1,42 @@
+
+
+<div class="d-flex justify-content-center align-items-center">
+  <h1>MINHAS MORADIAS</h1>
+</div>
+
+<p-dataView [value]="homes" layout="list" >
+
+  <ng-template let-home pTemplate="listItem">
+    <div class="col-12">
+    <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+        <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
+          src="https://imagens.ebc.com.br/216Ha7Et_wJ84tZI9gnRedUTcHw=/1100x370/smart/https://memoria.ebc.com.br/sites/_portalebc2014/files/atoms_image/moradia-popular.jpg">
+        <div
+          class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+          <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+            <div class="text-2xl font-bold text-900">{{ home.titulo }}</div>
+            <div class="flex align-items-center gap-3">
+              <span class="font-semibold">{{ home.tipo }}</span>
+              <br>
+              <span>{{'Local: ' + home.endereco.cidade + ", " + home.endereco.bairro + ", " +
+                home.endereco.rua + " - " + home.endereco.estado }}</span>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <button pButton icon="pi pi-shopping-cart" class="p-button" pTooltip="Visualizar" tooltipPosition="top"
+              [routerLink]="['/homeView', home.id]">Visualizar</button>
+
+            <button pButton icon="pi pi-pencil" class="p-button p-button-secondary" pTooltip="Editar" tooltipPosition="top"
+              [routerLink]="['/homeAlter', home.id]">Editar</button>
+
+            <button pButton icon="pi pi-trash" class="p-button p-button-danger" pTooltip="Excluir" tooltipPosition="top"
+              (click)="deleteHome(home.id)">Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</p-dataView>
+
+

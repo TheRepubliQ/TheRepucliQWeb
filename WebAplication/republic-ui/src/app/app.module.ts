@@ -9,7 +9,7 @@ import { AuthService } from './security/auth.service';
 import { CoreModule } from './core/core.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { RegisterModule } from './register/register.module';
-import { HomeViewComponent } from './homepage/home-view/home-view.component';
+import { InterestModule } from './interest/interest.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { HomeViewComponent } from './homepage/home-view/home-view.component';
     SecurityModule,
     HomepageModule,
     RegisterModule,
+    InterestModule,
     CoreModule
   ],
   providers: [

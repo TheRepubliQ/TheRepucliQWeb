@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center align-items-center">
+  <h1>LISTA DOS INTERESSADOS</h1>
+</div>
+<div class="d-flex justify-content-center">
+  <p-dataView [value]="contacts" layout="list" class="mt-4">
+    <ng-template let-contact pTemplate="listItem">
+      <div class="card p-4 mb-4 w-100">
+        <div class="d-flex justify-content-center align-items-center">
+          <i class="fas fa-user-circle fa-5x text-secondary"></i> <!-- Ícone de usuário -->
+        </div>
+        <div class="d-flex flex-column align-items-center mt-3">
+          <div class="text-2xl font-bold text-900 mb-2">{{ contact.nome}}</div>
+          <div class="d-flex flex-column align-items-center gap-2">
+            <span class="font-semibold">Dados de contato:</span>
+            <span>{{contact.name}}</span>
+            <span>
+              <a class="nav-link text-primary" [href]="'https://wa.me/' + contact.telefone + '?text=Ol%C3%A1%2C%20tudo%20bem%3F%0ASou%20propriet%C3%A1rio%20de%20um%20imov%C3%A9l%20do%20RepublicQ.%20%0AVi%20que%20voc%C3%AA%20demonstrou%20interesse%20na%20minha%20moradia!%0AVamos%20conversar%3F%0A(link%20da%20moradia)'">
+                {{ contact.telefone }}
+              </a>
+            </span>
+
+            <span>{{ contact.email }}</span>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+</div>

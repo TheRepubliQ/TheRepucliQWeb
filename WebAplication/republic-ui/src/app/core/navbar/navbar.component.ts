@@ -17,9 +17,9 @@ export class NavbarComponent {
     private router: Router
   ) { }
 
-    ngOnInit(){
-      this.isLoged = this.isLog();
-    }
+  ngOnInit() {
+    this.isLoged = this.isLog();
+  }
 
   isLog(): boolean {
     return this.auth.jwtPayload?.user_id;

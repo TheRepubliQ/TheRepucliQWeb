@@ -6,10 +6,22 @@
 
   <div>
     <div class="text-2xl font-bold text-1000">{{ home.titulo }}</div>
-    <div class= font-semibold> {{ home.tipo }}</div>
-    <span>{{'Local: ' + home.endereco.cidade + ", " + home.endereco.bairro + ", " +
-      home.endereco.rua + " - " + home.endereco.estado }}</span>
-    <br>
+    <div class= font-semibold> {{ home.tipo }}
+      <div class="p-col-12" *ngIf="isLoged && !interested" >
+        <p>
+          <button pButton type="submit" label="Tenho interesse" (click)="interest()"></button>
+        </p>
+      </div>
+      <div class="p-col-12" *ngIf="interested" >
+        <p>
+          <button pButton type="submit" label="Tirar interesse" (click)="interestRemove()"></button>
+        </p>
+      </div>
+    </div>
+    <span *ngIf="home.endereco">
+      {{'Local: ' + (home.endereco?.cidade || '') + ", " + (home.endereco?.bairro || '') + ", " +
+        (home.endereco?.rua || '') + " - " + (home.endereco?.estado || '') }}
+    </span>
     <br>
     <span class="text-2xl font-semibold">{{ 'R$ ' + home.preco }}</span>
 
@@ -19,7 +31,7 @@
     </div>
     <br>
     <div class="text-2xl font-semibold text-900"> Contato</div>
-    <div> {{"     Telefone: " + home.user.telefone  + "  Email: "  + home.user.email}}</div>
+    <div> {{"     Telefone: " + home.user?.telefone  + "  Email: "  + home.user?.email}}</div>
   </div>
 
 

@@ -23,7 +23,7 @@ export function tokenGetter(): any {
       config: {
         tokenGetter,
         allowedDomains: ['localhost:8080'],
-        disallowedRoutes: ['http://localhost:8080/oauth/token', 'http://localhost:8080/registrar',"http://localhost:8080/home","http://localhost:8080/home/filter"]
+        disallowedRoutes: ['http://localhost:8080/oauth/token', 'http://localhost:8080/registrar',"http://localhost:8080/home","http://localhost:8080/home/filter", "http://localhost:8080/home/:id"]
       }
     })
   ],

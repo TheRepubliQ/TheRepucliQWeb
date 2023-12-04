@@ -18,6 +18,9 @@ export class HomepageServic {
   homeUrl = 'http://localhost:8080/home';
   homeFilterUrl = 'http://localhost:8080/home/filter';
   homeRegister = 'http://localhost:8080/homeEdit';
+  homeInfo = 'http://localhost:8080/requests/homeInfos/';
+  homeOwner = 'http://localhost:8080/homeEdit/listHomes';
+
   email: any;
 
   constructor(
@@ -31,6 +34,23 @@ export class HomepageServic {
       .then(response => {
         return response;
       })
+  }
+
+  listForUserId(): Promise<any>{
+    const id = this.auth.jwtPayload?.user_id;
+    return this.http.get(`${this.homeOwner}/${id}`)
+      .toPromise()
+      .then(response => {
+        return response;
+      })
+  }
+
+  isInterested(homeId: number, userId: number) : Promise<any>{
+    return this.http.get(`${this.homeInfo}home=${homeId}/user=${userId}`)
+    .toPromise()
+    .then(response => {
+      return response;
+    })
   }
 
   search(filter: HomeFilter): Promise<any> {
@@ -82,6 +102,12 @@ export class HomepageServic {
 
     return this.http.put<any>(`${this.homeRegister}/${id}`, HomeRegister.toJson(home), { headers })
       .toPromise();
+  }
+
+  remove(id: number): Promise<any> {
+    return this.http.delete(`${this.homeRegister}/${id}`)
+      .toPromise()
+      .then(() => null);
   }
 
 }

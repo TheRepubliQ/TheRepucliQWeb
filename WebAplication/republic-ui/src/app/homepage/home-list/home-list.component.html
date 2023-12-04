@@ -11,6 +11,7 @@
         <label>Tipo </label>
         <p-dropdown name="type" [options]="types" placeholder="Selecione" [(ngModel)]="type"></p-dropdown>
       </div>
+      <br>
       <div class="d-flex justify-content-start">
         <label>Localização </label>
         <input pInputText name="address" type="address"
@@ -58,8 +59,6 @@
         </div>
       </div>
     </div>
-
-
   </ng-template>
 
   <ng-template let-home pTemplate="gridItem">
